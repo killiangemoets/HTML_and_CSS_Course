@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!-- We shoyld specify the language of the websiste in the html by using the lan attribute -->
+<html lang="en">
+  <head>
+    <!-- meta = metadata, the characterset should be UTF-8, which is all the simple character that we use in the English language -->
+    <meta charset="UTF-8" />
+    <title>The Basic Language of the Web: HTML</title>
+    <!-- Second way to add css is by using the style element in the head, but we should avoid it if we have a lot of css code -->
+    <!-- <style>
+      h1 {
+        color: blue;
+      }
+    </style> -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- We add a header -->
+      <header class="main-header clearfix">
+        <!-- Inline styles should usually never be used! -->
+        <!-- <h1 style="color: blue">📘 The Code Magazine</h1> -->
+        <h1>📘 The Code Magazine</h1>
+
+        <!-- section nav for a navigation bar -->
+        <nav>
+          <a href="bloc.html">Blog</a>
+          <a href="#">Challenges</a>
+          <a href="FlexboxAndCSSGrid/flexbox.html">Flexbox</a>
+          <a href="FlexboxAndCSSGrid/css-grid.html">CSS Grid</a>
+        </nav>
+
+        <!-- <div class="clear"></div> -->
+      </header>
+
+      <!-- We add an article -->
+      <article>
+        <header class="post-header">
+          <h2>The Basic Language of the Web: HTML</h2>
+
+          <img
+            src="img/laura-jones.jpg"
+            alt="Headshot of Laura Jones"
+            width="50"
+            height="50"
+            class="author-img"
+          />
+
+          <!-- We can use <b></b> or <strong></strong> to make text in bold but stronger as the meaning that it is a more important text and that is essentially the idea of semantic HTML.. So it's better to use strong -->
+          <p id="author" class="author">
+            Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027
+          </p>
+
+          <!-- We use the source attribute to add a picture -->
+          <!-- alt = alternative text -->
+          <img
+            src="img/post-img.jpg"
+            alt="HTML code on a screen"
+            width="500"
+            height="200"
+            class="post-img"
+          />
+          <button>💜 Like</button>
+        </header>
+
+        <!-- Same as bold, we can use <i></i> or <em></em> to make e text italic but em gives it
+    the meaning of an emphasized text, which is better -->
+        <p>
+          All modern websites and web applications are built using three
+          <em>fundamental</em>
+          technologies: HTML, CSS and JavaScript. These are the languages of the
+          web.
+        </p>
+        <p>
+          In this post, let's focus on HTML. We will learn what HTML is all
+          about, and why you too should learn it.
+        </p>
+
+        <h3>What is HTML?</h3>
+        <p>
+          HTML stands for <strong>H</strong>yper<strong>T</strong>ext
+          <strong>M</strong>arkup <strong>L</strong>anguage. It's a markup
+          language that web developers use to structure and describe the content
+          of a webpage (not a programming language).
+        </p>
+        <p>
+          HTML consists of elements that describe different types of content:
+          paragraphs, links, headings, images, video, etc. Web browsers
+          understand HTML and render HTML code as websites.
+        </p>
+
+        <p>In HTML, each element is made up of 3 parts:</p>
+
+        <ol>
+          <li class="first-li">The opening tag</li>
+          <li>The closing tag</li>
+          <li>The actual element</li>
+        </ol>
+
+        <!-- to add a link we use <a></a> where a stand for anchor -->
+        <!-- target="_blank" to open the link in a new tab -->
+        <p>
+          You can learn more at the
+          <a href="https://developer.mozilla.org/en-US/" target="_blank"
+            >MDN Web Docs.</a
+          >
+        </p>
+
+        <h3>Why should you learn HTML?</h3>
+
+        <p>
+          There are countless reasons for learning the fundamental language of
+          the web. Here are 5 of them:
+        </p>
+
+        <ul>
+          <li class="first-li">
+            To be able to use the fundamental web dev language
+          </li>
+          <li>
+            To hand-craft beautiful websites instead of relying on tools like
+            Worpress or Wix
+          </li>
+          <li>To build web applications</li>
+          <li>To impress friends</li>
+          <li>To have fun 😃</li>
+        </ul>
+
+        <p>Hopefully you learned something new here. See you next time!</p>
+      </article>
+
+      <!-- the aside element is generally use for secondary information that complement the information of the main part of the page -->
+      <aside>
+        <h4>Related posts</h4>
+        <ul class="related">
+          <li class="first-li">
+            <img
+              src="img/related-1.jpg"
+              alt="man coding"
+              width="80"
+              height="80"
+            />
+            <a href="#">How to Learn Web Developement</a>
+            <p class="related-author">By Jonas Schmedtmann</p>
+          </li>
+          <li>
+            <img src="img/related-2.jpg" alt="tornado" width="80" height="80" />
+            <a href="#">THe Unknown Powers of CSS</a>
+            <p class="related-author">By Jimm Dillon</p>
+          </li>
+          <li>
+            <img
+              src="img/related-3.jpg"
+              alt="screen with code"
+              width="80"
+              height="80"
+            />
+            <a href="#">Why JavaScript is Awesome</a>
+            <p class="related-author">By Matilda</p>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- we add a footer -->
+      <footer>
+        <p id="copyright" class="text copyright">
+          Copyright &copy; 2027 by The Code Magazine
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<!-- Semantic HTML: we ask the question what this element actually mean and we what it stands for? -->
+<!-- Examples: div has no meaning but nav represents a section of a page that links to other pages or to parts within the page: a section with navigation links, or p represents a paragraph -->
+<!-- Semantic is important for search engine optimization, and also for accessibility (for blind people, ...) -->

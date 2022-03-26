@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox</title>
+    <style>
+      .el--1 {
+        background-color: blueviolet;
+      }
+      .el--2 {
+        background-color: orangered;
+      }
+      .el--3 {
+        background-color: green;
+        height: 150px;
+      }
+      .el--4 {
+        background-color: goldenrod;
+      }
+      .el--5 {
+        background-color: palevioletred;
+      }
+      .el--6 {
+        background-color: steelblue;
+      }
+      .el--7 {
+        background-color: yellow;
+      }
+      .el--8 {
+        background-color: crimson;
+      }
+
+      .container {
+        /* STARTER */
+        font-family: sans-serif;
+        background-color: #ddd;
+        font-size: 32px;
+        margin: 40px;
+        /* height: 500px; */
+
+        /* FLEXBOX */
+        /* The container div here is the FLEX CONTAINER and the eight div inside are the FLEX ITEMS
+        BY DEFAULT:
+        Horizontally each flex item takes up exactly the space that's necessary for its text content
+        Vertically all the flex items are as tall as the tallest (in this case, see el--3) */
+        display: flex;
+
+        /* When we set align-items to center, all the elements are align vertically at the center of their container and have therefore their own height */
+        align-items: center; /*center/stretch/flex-end/flex-start */
+
+        /* We can also center all the items horizontally */
+        justify-content: flex-start; /*space-between/center/...*/
+
+        gap: 10px;
+      }
+
+      .el {
+        /* margin-right: 24px; */
+
+        /* DEFAULT VALUES:
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto; */
+
+        /* It changes the width of the elements but it's not really rigid. Indeed, the browser will based on the content figure out the optimal length  */
+        flex-basis: 100px;
+
+        /* By default flexbox shrink the items so that they fit in container but we can delete that by setting flex-shrink to 0; */
+        /* flex-shrink: 0; */
+
+        /* flex-grow is the opposite of flex-shrink and determine is the elements are allowed to grow as large as they can or not */
+        /* by setting flex-grow to 1 (or even 2 or 5 or whatever) for all the elements, all the elements will have the same size */
+        flex-grow: 1;
+
+        /* flex is a shorthand for flex -grow, -shrink, and -basis,*/
+        flex: 1; /* means that flex-grow should be 1 */
+        flex: 0 0 100px;
+      }
+
+      .el--1 {
+        align-self: flex-start;
+        /* order: 2; */
+        /* IMPORTANT: setting flex-grow to 2 for this element doesn't mean that it will get double size! It means that it will get double of THE AVAILABLE EMPTY SPACE than the other elements */
+        flex-grow: 2;
+      }
+
+      .el--5 {
+        align-self: stretch;
+        order: 1;
+      }
+
+      .el--6 {
+        order: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="el el--1">HTML</div>
+      <div class="el el--2">and</div>
+      <div class="el el--3">CSS</div>
+      <div class="el el--4">are</div>
+      <div class="el el--5">amazing</div>
+      <div class="el el--6">languages</div>
+      <div class="el el--7">to</div>
+      <div class="el el--8">learn</div>
+    </div>
+  </body>
+</html>

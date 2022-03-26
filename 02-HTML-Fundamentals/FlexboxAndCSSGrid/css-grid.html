@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid</title>
+    <style>
+      .el--1 {
+        background-color: blueviolet;
+      }
+      .el--2 {
+        background-color: orangered;
+      }
+      .el--3 {
+        background-color: green;
+        height: 150px;
+      }
+      .el--4 {
+        background-color: goldenrod;
+      }
+      .el--5 {
+        background-color: palevioletred;
+      }
+      .el--6 {
+        background-color: steelblue;
+      }
+      .el--7 {
+        background-color: yellow;
+      }
+      .el--8 {
+        background-color: crimson;
+      }
+
+      .container--1 {
+        /* STARTER */
+        font-family: sans-serif;
+        background-color: #ddd;
+        font-size: 30px;
+        margin: 40px;
+
+        /* CSS GRID */
+        display: grid;
+        /* We can define as many width values as we want and for each value one column will be created */
+
+        /* Like flexbox, it changes the width of the elements but it's not really rigid. Indeed, the browser will based on the content figure out the optimal length  */
+
+        /* grid-template-columns: 200px 2fr 1fr 100px; */
+        /* grid-template-columns: 2fr 1fr 1fr auto; */
+        /* grid-template-columns: 2fr repeat(2, 1fr) auto; */
+        grid-template-columns: repeat(4, 1fr);
+
+        /* fr is also available on rows but for that we need to give a height to container otherwise there is not really anyhing to fill and all the elements will take the height of the taller element*/
+        /* grid-template-rows: 1fr auto; */
+        grid-template-rows: 1fr 1fr;
+
+        /* height: 500px; */
+
+        /* If we define the size of the row, it's called an EXPLICIT ROW */
+        /* If we don't define the size of the row, it's called an IMPLICIT ROW */
+
+        /* with using pixels, as some point the elements overfloat the container. To avoid it and to have flexible columns and rows we can use the fr unit. */
+        /* Setting the unit to 1fr is like setting flex-grow to 1 in flexbox */
+        /* Note: 2fr will get 2 times the width of 1fr */
+
+        /* By fixing auto, it will take exactly the size that is necessary of it's content */
+
+        /* gap: 30px; */
+        column-gap: 20px;
+        row-gap: 40px;
+
+        display: none;
+      }
+
+      /* .el--8 { */
+      /* It means that the element should starts at column number 2 and end at column number 3 */
+      /* grid-column: 2 / 3; */
+      /* grid-row: 1 / 3; */
+      /* grid-row: 1 / span 2; */
+      /* } */
+
+      /* .el--2 { */
+      /* It means that the element should starts at column number 2 and end at column number 3 */
+      /* grid-column: 1 / 2;
+        grid-row: 2 / 3; */
+      /* NOTE: if the second value is one more than the first, we can omit it */
+      /* grid-column: 1 / 3; */
+      /* Instead of specifying the final value ofthe grid line, we can say span across the number of cells that we want */
+      /* grid-column: 1 / span 2; */
+      /* grid-column: 1 / -1; */
+
+      /* grid-row: 2; */
+      /* } */
+
+      /* .el--6 { */
+      /* grid-row: 3/6; */
+      /* } */
+
+      .container--2 {
+        /* STARTER */
+        font-family: sans-serif;
+        background-color: black;
+        font-size: 40px;
+        margin: 100px;
+
+        width: 1000px;
+        height: 600px;
+
+        /* CSS GRID */
+        display: grid;
+        grid-template-columns: 125px 200px 125px;
+        grid-template-rows: 250px 100px;
+        gap: 50px;
+
+        /* Align tracks inside containe: distibute empty space */
+        justify-content: center; /*Align horizontally*/
+        /* justify-content: space-between / end / ...; */
+        align-content: center; /*Align vertically*/
+        /* align-content: space-between / end / ...; */
+
+        /* Aligning items INSIDE cells: moving items around inside cells */
+        align-items: center;
+        justify-items: center;
+      }
+
+      .el--3 {
+        align-self: end;
+        justify-self: end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container--1">
+      <div class="el el--1">(1) HTML</div>
+      <div class="el el--2">(2) and</div>
+      <div class="el el--3">(3) CSS</div>
+      <div class="el el--4">(4) are</div>
+      <div class="el el--5">(5) amazing</div>
+      <div class="el el--6">(6) languages</div>
+      <!-- <div class="el el--7">(7) to</div> -->
+      <div class="el el--8">(8) learn</div>
+    </div>
+
+    <div class="container--2">
+      <div class="el el--1">(1)</div>
+      <div class="el el--3">(3)</div>
+      <div class="el el--4">(4)</div>
+      <div class="el el--5">(5)</div>
+      <div class="el el--6">(6)</div>
+      <div class="el el--7">(7)</div>
+    </div>
+  </body>
+</html>
